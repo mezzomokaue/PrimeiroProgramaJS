@@ -10,18 +10,17 @@
     <h1>Identificador de Naturalidade</h1>
     Insira qual é a sua naturalidade: <input type="text" name="txtn" id="txtn">
     <input type="button" value="Verificar" onclick="verificar()">
-    <div id="res">
-
-    </div>
+    <div id="res"></div>
     <script>
         function verificar(){
-            var país = document.getElementById('txtn')
-            var res = document.getElementById('res')
-            res.innerHTML = `<p>Sua naturalidade é <strong>${país}</strong></p>`
-            if(país == 'Brasil'){
-                res.innerHTML += `<p>Você é <strong>Brasileiro</strong>!</p>`
+            var pais = document.getElementById('txtn').value;
+            var res = document.getElementById('res');
+            res.innerHTML = "<p>Sua naturalidade é <strong>" + pais + "</strong></p>";
+            if(pais.toLowerCase() == 'brasileiro'){
+                res.innerHTML += "<p>Você é <strong>Brasileiro</strong>!</p>";
+            } else {
+                res.innerHTML += "<p>Você é <strong>Estrangeiro</strong>!</p>";
             }
-            res.innerHTML += `<p>Você é: <strong>Estrangeiro</strong>!</p>`
         }
     </script>
 </body>
