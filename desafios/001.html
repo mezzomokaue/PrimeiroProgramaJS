@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio das Mensagens</title>
+    <style>
+        body{
+            font: normal 15pt Arial;
+        }
+        div.botao{
+            font: normal 10pt Arial;
+            background: #ffffff;
+            color: #000000;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            display: inline-block;
+            margin-right: 10px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+    </style>    
+</head>
+<body>
+    <h1>Desafio das Mensagens</h1>
+    <div class="botao" id="bt1">
+        Botão 1
+    </div>
+    <div class="botao" id="bt2">
+        Botão 2
+    </div>
+    <div class="botao" id="bt3">
+        Botão 3
+    </div>    
+    <script>
+        var b1 = document.getElementById('bt1')
+        var b2 = document.getElementById('bt2')
+        var b3 = document.getElementById('bt3')
+        b1.addEventListener('click', clickb1)
+        b2.addEventListener('click', clickb2)
+        b3.addEventListener('click', clickb3)
+        function clickb1(){
+            window.alert('Você clicou no 1° botão!')
+        }
+        function clickb2(){
+            window.alert('Você clicou no 2° botão!')
+        }
+        function clickb3(){
+            window.alert('Você clicou no 3° botão!')
+        }
+    </script>
+</body>
+</html>
