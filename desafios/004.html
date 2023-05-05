@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio da calculadora de troco</title>
+    <style>
+        body {
+            font: normal 15pt Arial;
+            background-color: #f8f8f8;
+        }
+
+        h1 {
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 24pt;
+            color: #333;
+        }
+
+        .inp {
+            font: normal 10pt Arial;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            display: inline-block;
+            margin-right: 10px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .inp:hover {
+            background-color: #756c6c;
+            color: #fff;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+            transform: translate(1px, 1px);
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Calculando o Troco
+    </h1>
+    <div class='inp' id="inp">
+        <strong>Comprar produto</strong>
+    </div>
+    <script>
+        var inp = document.getElementById("inp")
+        inp.addEventListener("click", verificar)
+        function verificar(){
+            var pro = window.prompt("Que produto você está comprando?")
+            var val = parseFloat(window.prompt(`Quanto custa o ${pro} que você está comprando?`).replace(',', '.'))
+            var pag = parseFloat(window.prompt(`Qual foi o valor que você deu para pagar o ${pro}?`).replace(',', '.'))
+            var troco = pag - val
+            window.alert(`Você comprou o ${pro} que custou R$ ${val.toLocaleString("pt-BR", {minimumFractionDigits: 2, maximumFractionDigits: 2})}.\nDeu R$ ${pag.toLocaleString("pt-BR", {minimumFractionDigits: 2, maximumFractionDigits: 2})} em dinheiro e vai receber R$ ${troco.toLocaleString("pt-BR", {minimumFractionDigits: 2, maximumFractionDigits: 2})} de troco.\nVolte sempre!`)
+        }
+    </script>
+</body>
+</html>
