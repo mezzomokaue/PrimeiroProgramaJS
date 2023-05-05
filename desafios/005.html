@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio conversor de Medidas</title>
+    <style>
+        body {
+            font: normal 15pt Arial;
+            background-color: #f8f8f8;
+        }
+
+        h1 {
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 24pt;
+            color: #333;
+        }
+
+        .inp {
+            font: normal 10pt Arial;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            display: inline-block;
+            margin-right: 10px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .inp:hover {
+            background-color: #756c6c;
+            color: #fff;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+            transform: translate(1px, 1px);
+        }
+
+        div#div2{
+            font:normal 13pt Arial;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Conversor de Medidas
+    </h1>
+    <div class='inp' id="inp">
+        <strong>Converter</strong>
+    </div>
+    <div id="div2">
+        Clique no botão acima para iniciar.
+    </div>
+    <script>
+        var inp = document.getElementById("inp")
+        var div2 = document.getElementById("div2")
+        inp.addEventListener("click", converter)
+        function converter(){
+            var m = parseFloat(window.prompt('Digite uma distância em metros (m)'))
+            var dam = m/10
+            var hm = dam/10
+            var km = hm/10
+            var dm = m*10
+            var cm = dm*10
+            var mm = cm*10
+            var div2 = window.alert(`${km.toLocaleString("pt-BR", {minimumFractionDigits: 3, maximumFractionDigits: 3})} quilômetros (Km)\n${hm.toLocaleString("pt-BR", {minimumFractionDigits: 3, maximumFractionDigits: 3})} hectômetros (Hm)\n${dam.toLocaleString("pt-BR", {minimumFractionDigits: 3, maximumFractionDigits: 3})} decâmetros (Dam)\n${dm.toLocaleString("pt-BR", {minimumFractionDigits: 3, maximumFractionDigits: 3})} decímetros (dm)\n${cm.toLocaleString("pt-BR", {minimumFractionDigits: 3, maximumFractionDigits: 3})} centímetros (cm)\n${mm.toLocaleString("pt-BR", {minimumFractionDigits: 3, maximumFractionDigits: 3})} milímetros (mm)\n`)
+        }
+
+    </script>
+</body>
+</html>
