@@ -34,6 +34,7 @@
             box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
             cursor: pointer;
             transition: all 0.3s ease;
+            border: 2px solid white;
         }
 
         .inp:hover {
@@ -47,6 +48,19 @@
             font:normal 13pt Arial;
             margin-top: 15px;
         }
+
+        div.novdiv {
+            margin-top: 20px;
+            font: normal 13pt Arial;
+            line-height: 1.5;
+        }
+
+        div.novdiv2 {
+            margin-top: 20px;
+            font: normal 20pt Arial;
+            line-height: 1.5;
+        }
+        
     </style>
 </head>
 <body>
@@ -71,7 +85,11 @@
             var dm = m*10
             var cm = dm*10
             var mm = cm*10
-            var div2 = window.alert(`${km.toLocaleString("pt-BR", {minimumFractionDigits: 3, maximumFractionDigits: 3})} quilômetros (Km)\n${hm.toLocaleString("pt-BR", {minimumFractionDigits: 3, maximumFractionDigits: 3})} hectômetros (Hm)\n${dam.toLocaleString("pt-BR", {minimumFractionDigits: 3, maximumFractionDigits: 3})} decâmetros (Dam)\n${dm.toLocaleString("pt-BR", {minimumFractionDigits: 3, maximumFractionDigits: 3})} decímetros (dm)\n${cm.toLocaleString("pt-BR", {minimumFractionDigits: 3, maximumFractionDigits: 3})} centímetros (cm)\n${mm.toLocaleString("pt-BR", {minimumFractionDigits: 3, maximumFractionDigits: 3})} milímetros (mm)\n`)
+
+            var novdiv = document.createElement('div'); // criar nova div
+            novdiv.className = 'novdiv'; // adicionar classe à nova div
+            novdiv.innerHTML = `${km.toLocaleString("pt-BR", {minimumFractionDigits: 3, maximumFractionDigits: 3})} quilômetros (Km)<br>${hm.toLocaleString("pt-BR", {minimumFractionDigits: 3, maximumFractionDigits: 3})} hectômetros (Hm)<br>${dam.toLocaleString("pt-BR", {minimumFractionDigits: 3, maximumFractionDigits: 3})} decâmetros (Dam)<br>${dm.toLocaleString("pt-BR", {minimumFractionDigits: 3, maximumFractionDigits: 3})} decímetros (dm)<br>${cm.toLocaleString("pt-BR", {minimumFractionDigits: 3, maximumFractionDigits: 3})} centímetros (cm)<br>${mm.toLocaleString("pt-BR", {minimumFractionDigits: 3, maximumFractionDigits: 3})} milímetros (mm)<br>`; //imprimindo as medidas na nova div
+            div2.parentNode.replaceChild(novdiv, div2); // substituir div antiga pela nova div
         }
 
     </script>
