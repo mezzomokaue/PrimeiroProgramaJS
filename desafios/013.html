@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR  ">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio situação aluno</title>
+    <style>
+        body{
+            font: normal 15pt Arial;
+        }
+
+        .inp {
+            font: normal 10pt Arial;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            display: inline-block;
+            margin-right: 10px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .inp:hover {
+            background-color: #756c6c;
+            color: #fff;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+            transform: translate(1px, 1px);
+        }
+
+        div.novdiv {
+            margin-top: 20px;
+            font: normal 13pt Arial;
+            line-height: 1.5;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>
+        Situação do Aluno
+    </h1>
+    <div class="inp" id="inp">
+        Entrar com as notas
+    </div>
+    <script>
+        var inp = document.getElementById("inp")
+        inp.addEventListener("click", verificar)
+        function verificar(){
+            var nome = window.prompt("Qual é o nome do aluno?")
+            var n1 = parseFloat(window.prompt(`Primeira nota de ${nome}:`))
+            var n2 = parseFloat(window.prompt(`Segunda nota de ${nome}:`))
+            var media = (n1+n2)/2
+            var novdiv = document.createElement('div'); // criar nova div
+            novdiv.className = 'novdiv'; // adicionar classe à nova div
+            if (media < 3){
+                novdiv.innerHTML = (`Com as notas ${n1.toFixed(2)} e ${n2.toFixed(2)}, a média é ${media.toFixed(2)}<br>Com média abaixo de 3,0, o aluno está REPROVADO!`)
+            }else if (media >= 3 && media <= 6 ){
+                novdiv.innerHTML = (`Com as notas ${n1.toFixed(2)} e ${n2.toFixed(2)}, a média é ${media.toFixed(2)}<br>Com média entre 3,0 e 6,0, o aluno está em RECUPERAÇÃO!`)
+            }else if (media > 6){
+                novdiv.innerHTML = (`Com as notas ${n1.toFixed(2)} e ${n2.toFixed(2)}, a média é ${media.toFixed(2)}<br>Com média maior que 6,0, o aluno está APROVADO!`)
+            }
+            document.body.appendChild(novdiv); // adicionar nova div ao body
+        }
+    </script>
+</body>
+</html>
